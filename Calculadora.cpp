@@ -36,7 +36,7 @@ int main() {
             cout << a << operador << b << "=" << a/b << endl;
         }
     }
-
+ // no sabemos como redondear floats a integros asi que lo pedimos que lo hagan ellos jsjsjsj
     else if (operador == '%') {
         cout << "favor de redondear sus numeros ya que no se hacerlo en el programa e ingresar nuevamente sin punto decimal " << endl ;
         int d, e ;
