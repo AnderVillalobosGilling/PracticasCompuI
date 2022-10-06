@@ -17,12 +17,12 @@ int main()
     char decision;
     array<float, LEN> arr = { 0 }; // Inicializamos el arreglo con ceros como buena práctica
     arr = LlenarArreglo(); // Solicitamos al usuario que llene un arreglo y lo asignamos a nuestro arreglo principal
-    cout << "Operación: ";
+    cout << "Operacion: ";
     cin >> decision;
     // Si la operación no es '+' de suma, o '*' de multiplicación, seguimos preguntando al usuario.
     while (decision != '+' && decision != '*')
     {
-        cout << "Operación: ";
+        cout << "Operacion: ";
         cin >> decision;
     }
     // Si se ingresa la multiplicación
