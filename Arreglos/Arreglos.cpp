@@ -67,7 +67,7 @@ array<float, LEN> LlenarArreglo()
 array<float, LEN> MultiplicarArreglo(array<float, LEN> arreglo, float multiplo)
 {
     for (int i = 0; i < LEN; i++) {
-        arreglo[i] = multiplo;
+        arreglo[i] *= multiplo;
     }
     return arreglo;
 }
