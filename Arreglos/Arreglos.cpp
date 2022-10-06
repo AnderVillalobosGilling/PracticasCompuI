@@ -54,7 +54,13 @@ void ImprimirArreglo(array<float, LEN> arreglo)
 // Llena un arreglo de tamaño LEN y lo "regresa" como resultado
 array<float, LEN> LlenarArreglo()
 {
-    // TODO
+  
+    array<float, LEN> Atemporal = {0};
+    for (int i = 0; i < LEN; i++) {
+        cout << "valor elemento[" << i << "]:" ;
+        cin >> Atemporal [i]; 
+    }
+    return Atemporal;
 }
 
 // Multiplica cada elemento del arreglo 'arreglo' por el factor 'mult'
