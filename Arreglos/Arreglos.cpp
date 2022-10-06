@@ -66,11 +66,18 @@ array<float, LEN> LlenarArreglo()
 // Multiplica cada elemento del arreglo 'arreglo' por el factor 'mult'
 array<float, LEN> MultiplicarArreglo(array<float, LEN> arreglo, float multiplo)
 {
-    // TODO
+    for (int i = 0; i < LEN; i++) {
+        arreglo[i] = multiplo;
+    }
+    return arreglo;
 }
 
 // Suma elemento a elemento los arreglos 'arr1' y 'arr2' y regresa el arreglo resultante
 array<float, LEN> SumarArreglos(array<float, LEN> arr1, array<float, LEN> arr2)
 {
-    // TODO
+    array<float, LEN> Atemporal = {0};
+    for(int i = 0; i < LEN; i++) {
+        Atemporal[i] =arr1[i] +arr2[i] ;
+    }
+    return Atemporal; 
 }
