@@ -80,7 +80,28 @@ No regresa ningún valor.
 template <typename matriz>
 void ImprimirSolucion(matriz & miMatriz)
 {
-    //TODO
+    const int variables = 3;
+    //arreglo con numero de filas que tenemos variables es decir 3
+    array <float , variables> Soluciones = {0};
+    //hacemos un ciclo for para las diferentes soluciones que pueden existir del sistema
+    for (int i=0 ; i<miMatriz.size(); i++){
+        Soluciones [i] = miMatriz[i][miMatriz.size()];
+        if (miMatriz[i][i] == 0) {
+            if (miMatriz[i][miMatriz.size()] == 0){
+                cout << "\n" << "excisten infinitas soluciones" << endl ;
+                //este primer ciclo es para cuando miMatriz[i][i] = miMatriz[i][miMatriz.size()] == 0
+                //                asi que hay soluciones infinitas
+                return;
+            }
+            else cout << "\n" << "no hay soluciones" << endl ;
+            return;
+        }
+    }
+    //ahora si imprimimos las soluciones
+    cout << "\n" << "Solución:" << endl ;
+    for (int i = 0; i < miMatriz.size(); i++) {
+        cout << "x" << i << " = " << Soluciones[i] << endl ;
+    }
 }
 
 /*
