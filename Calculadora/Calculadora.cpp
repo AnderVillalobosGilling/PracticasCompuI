@@ -19,21 +19,21 @@ int main() {
     // el usuario ya ingreso los valores ahora le damos instrucciones a la compu de como trabajar
 
 
-    if (operador == '+' ){
-        cout << a <<  " " << operador << " " << b << " " <<"=" << " " << a+b << endl  ;
+   if (operador == '+' ){
+        cout << "Resultado:" <<  " " << a <<  " " << operador << " " << b << " " <<"=" << " " << a+b << endl  ;
     }
     else if( operador  == '-'){
 
-        cout << a << " " << operador << " " << b << " " << "=" << " " << a-b << '\t' << endl ;
+        cout << "Resultado:" <<  " " << a << " " << operador << " " << b << " " << "=" << " " << a-b << '\t' << endl ;
     }
     else if (operador == '*') {
-        cout << a << " " << operador << " " << b << " " << "=" <<" " << a*b << '\t' << endl ;
+        cout <<"Resultado:" <<  " " << a << " " << operador << " " << b << " " << "=" <<" " << a*b << '\t' << endl ;
     }
     else if (operador == '/') {
         if (b == 0 ){ cout << "syntax error division no posible" << '\t' << endl;
         }
         else {
-            cout << a << " " << operador << " " << b << " " <<"=" <<" " << a/b << '\t' << endl;
+            cout << "Resultado:" <<  " " << a << " " << operador << " " << b << " " <<"=" <<" " << a/b << '\t' << endl;
         }
     }
         // no sabemos como redondear floats a integros asi que lo pedimos que lo hagan ellos jsjsjsj
@@ -42,8 +42,9 @@ int main() {
         int d, e ;
         cin >> d  ;
         cin >> e  ;
-        cout << d << " " << operador << " " << e << " " << "=" << " " << d%e << endl ;
+        cout << "Resultado:" <<  " " << d << " " << operador << " " << e << " " << "=" << " " << d%e << endl ;
     }
+
 
     return 0;
 }
