@@ -20,30 +20,31 @@ int main() {
 
 
     if (operador == '+' ){
-        cout << a << operador << b << "=" << a+b << endl  ;
+        cout << a <<  " " << operador << " " << b << " " <<"=" << " " << a+b << endl  ;
     }
     else if( operador  == '-'){
 
-        cout << a << operador << b << "=" << a-b << endl ;
+        cout << a << " " << operador << " " << b << " " << "=" << " " << a-b << '\t' << endl ;
     }
     else if (operador == '*') {
-        cout << a << operador << b << "=" << a*b << endl ;
+        cout << a << " " << operador << " " << b << " " << "=" <<" " << a*b << '\t' << endl ;
     }
     else if (operador == '/') {
-        if (b == 0 ){ cout << "syntax error division no posible" << endl;
+        if (b == 0 ){ cout << "syntax error division no posible" << '\t' << endl;
         }
         else {
-            cout << a << operador << b << "=" << a/b << endl;
+            cout << a << " " << operador << " " << b << " " <<"=" <<" " << a/b << '\t' << endl;
         }
     }
- // no sabemos como redondear floats a integros asi que lo pedimos que lo hagan ellos jsjsjsj
+        // no sabemos como redondear floats a integros asi que lo pedimos que lo hagan ellos jsjsjsj
     else if (operador == '%') {
         cout << "favor de redondear sus numeros ya que no se hacerlo en el programa e ingresar nuevamente sin punto decimal " << endl ;
         int d, e ;
         cin >> d  ;
         cin >> e  ;
-        cout << d << operador << e << "=" << d%e << endl ;
+        cout << d << " " << operador << " " << e << " " << "=" << " " << d%e << endl ;
     }
 
     return 0;
 }
+
