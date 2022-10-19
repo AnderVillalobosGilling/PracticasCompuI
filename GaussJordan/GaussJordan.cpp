@@ -1,7 +1,7 @@
 #include <iostream>
 #include <array>
 
-// Añadir std para fácil llamado de funciones
+// Añadir std para facil llamado de funciones
 using namespace std;
 
 //// Declaración de funciones
@@ -74,7 +74,7 @@ void ImprimirMatriz(matriz & miMatriz)
 }
 
 /*
-Imprime en pantalla la solución para cada variable del sistema de ecuaciones correspondiente a los valores en 'miMatriz'.
+Imprime en pantalla la solucion para cada variable del sistema de ecuaciones correspondiente a los valores en 'miMatriz'.
 No regresa ningún valor.
 */
 template <typename matriz>
@@ -98,7 +98,7 @@ void ImprimirSolucion(matriz & miMatriz)
         }
     }
     //ahora si imprimimos las soluciones
-    cout << "\n" << "Solución:" << endl ;
+    cout << "\n" << "Solucion:" << endl ;
     for (int i = 0; i < miMatriz.size(); i++) {
         cout << "x" << i << " = " << Soluciones[i] << endl ;
     }
@@ -134,7 +134,7 @@ void GaussJordan(matriz & miMatriz)
             }
         }
         if(miMatriz[i][i] == 0){
-            cout << "no existe solucion\n";
+            cout << "no existe solucion\n" << endl ;
         }
         else{
             for(int n = 0; n < rows; n++){
