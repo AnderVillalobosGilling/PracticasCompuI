@@ -111,36 +111,44 @@ No regresa ningún valor.
 template <typename matriz>
 void GaussJordan(matriz & miMatriz)
 {
- const int variables = 3;
-    float temp = 0;
-    int fila =1;
-    int sumafila = 0;
-    for (int i = 0; i < miMatriz.size() ; i++) {
-        fila = 1;
-        // Si nuestro pivote es 0 cambiamos las filas
-        while (miMatriz[i][i] == 0 && fila < miMatriz.size()) {
-            for (int j = 0; j <= miMatriz.size(); j++) {
-                temp = miMatriz[i][j];
-                miMatriz[i][j] = miMatriz[fila][j];
-                miMatriz[fila][j] = temp;
+    double sup;
+    int index;
+    double aux;
+    double piv;
+
+    int rows = miMatriz.size();
+    for(int i = 0; i < rows; i++ ){
+        sup = abs(miMatriz[i][i]);
+        index = i;
+        for(int j = i + 1; j < rows; j++){
+            if(sup < abs(miMatriz[j][i])){
+                sup = abs(miMatriz[j][i]);
+                index = j;
             }
-            fila++;
         }
-        if (fila == miMatriz.size()) {
-            continue;
-            //al tener todas la filas con pivote 0 pasamos al siguiente piv
+        if(i != index){
+            for(int n = 0; n < rows + 1; n++){
+                aux = miMatriz[i][n];
+                miMatriz[i][n] = miMatriz[index][n];
+                miMatriz[index][n] = aux;
+            }
         }
-        temp = miMatriz[i][i];
-        for (int j = i; j <= miMatriz.size(); j++) {
-            miMatriz[i][j] = (miMatriz[i][j] / temp);
-            // dividimos la Matriz entre el pivote
+        if(miMatriz[i][i] == 0){
+            cout << "no existe solucion\n";
         }
-        for (int j = 0; j < (miMatriz.size() - 1); j++) {
-            sumafila += 1;
-            temp = miMatriz[(i + sumafila) % miMatriz.size()][i];
-            if (temp != 0) {
-                for (int k = i; k <= miMatriz.size(); k++) {
-                    miMatriz[((i + sumafila) % miMatriz.size())][k] += -1 * temp * miMatriz[i][k];
+        else{
+            for(int n = 0; n < rows; n++){
+                if (n!=i){
+                    piv = -miMatriz[n][i];
+                    for(int m = i; m< rows + 1; m++){
+                        miMatriz[n][m] = miMatriz[n][m] + piv * miMatriz[i][m] / miMatriz[i][i];
+                    }
+                }
+                else{
+                    piv = miMatriz[i][i];
+                    for(int m= i; m< rows + 1; m++){
+                        miMatriz[n][m] = miMatriz[n][m] / piv;
+                    }
                 }
             }
         }
