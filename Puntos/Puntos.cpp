@@ -1,10 +1,12 @@
 #include <iostream>
 #include <array>
 #include <cmath>
-// Incluimos nuestro encabezado con la definición de la clase Punto2D
-#include "Punto.h"
-//hay que incluir tabien math.h para que jale
 #include <math.h>
+// Incluimos nuestro encabezado con la definición de la clase Punto2D
+#include "Punto2D.h"
+//hay que incluir tabien math.h para que jale
+#include "Punto2D.h"
+//#include "Punto.h"
 
 using namespace std;
 
