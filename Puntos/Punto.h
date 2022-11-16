@@ -20,7 +20,7 @@ public:
     float GetY();
 
 private:
-
+//variables privadas que seran los valores para dar un punto
     float a , b , c;
     
 
