@@ -2,14 +2,13 @@
 // Created by ander on 11/10/2022.
 //
 
-#ifndef PUNTOS_PUNTO2D_H
-#define PUNTOS_PUNTO2D_H
+#ifndef PUNTOS_PUNTO_H
+#define PUNTOS_PUNTO_H
 #include <vector>
 
 using namespace std;
 
 class Punto2D {
-//creamos nuestro ambiente publico para los metodos
 public:
     Punto2D();
     void SetPosicion(float x, float y);
@@ -20,12 +19,8 @@ public:
     float GetY();
 
 private:
-//variables privadas que seran los valores para dar un punto
-    float a , b , c;
-    
-
+    float a, b, c;
 };
 
 
-#endif //PUNTOS_PUNTO2D_H
-
+#endif //PUNTOS_PUNTO_H
