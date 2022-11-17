@@ -1,16 +1,14 @@
 #include <iostream>
 #include <array>
 #include <math.h>
+
 // Incluimos nuestro encabezado con la definición de la clase Punto2D
-//#include "Punto2D.h"
-//hay que incluir tabien math.h para que jale
-//#include "Punto2D.h"
 #include "Punto.h"
 
 using namespace std;
 
 // Declaración de funciones
-void PedirValores(float& x, float& y);
+void PedirValores(float &x, float &y);
 char PedirOperacion();
 
 int main()
@@ -40,24 +38,24 @@ int main()
             // Salimos del switch
             break;
             // Si operaciosn == 'r' entonces realiza lo siguiente
-        case 'r':
-            // Solicita al usuario ingrese el valor del ángulo a rotar
-            cout << "Ingresa el valor del angulo a rotar (en grados): ";
-            cin >> temp1;
-            // Rota el punto en el plano con respecto al origen
-            miPunto.RotarRespectoAlOrigen(temp1);
-            break;
-            // Si operacion == 'e' entonces realiza lo siguiente
-        case 'e':
-            // solicita al usuario que ingrese el factor de escala para cada eje
-            cout << "Ingresa los factores a escalar para cada eje\n";
-            PedirValores(temp1, temp2);
-            miPunto.Escalar(temp1, temp2);
-            break;
-            // Si ninguno de los casos anteriores se cumplió, entonces realiza lo siguiente
-        default:
-            cout << "Operacion no valida\n";
-            break;
+            case 'r':
+                // Solicita al usuario ingrese el valor del ángulo a rotar
+                cout << "Ingresa el valor del angulo a rotar (en grados): ";
+                cin >> temp1;
+                // Rota el punto en el plano con respecto al origen
+                miPunto.RotarRespectoAlOrigen(temp1);
+                break;
+                // Si operacion == 'e' entonces realiza lo siguiente
+                case 'e':
+                    // solicita al usuario que ingrese el factor de escala para cada eje
+                    cout << "Ingresa los factores a escalar para cada eje\n";
+                    PedirValores(temp1, temp2);
+                    miPunto.Escalar(temp1, temp2);
+                    break;
+                    // Si ninguno de los casos anteriores se cumplió, entonces realiza lo siguiente
+                    default:
+                        cout << "Operacion no valida\n";
+                        break;
     }
     // Imprime la posición final del punto después de las transformaciones
     cout << "Posicion final:\n";
@@ -67,17 +65,14 @@ int main()
 }
 
 // Solicita dos valores de punto flotante al usuario y modifícalos por referencia
-void PedirValores(float& x, float& y)
-{
+void PedirValores(float &x, float &y) {
     cout << "x: ";
     cin >> x;
     cout << "y: ";
     cin >> y;
 }
 
-// Solicita una operación válida al usuario
-char PedirOperacion()
-{
+char PedirOperacion() {
     char op;
     do {
         cout << "Operacion ('t' para trasladar, 'r' para rotar, 'e' para escalar): ";
