@@ -1,0 +1,77 @@
+# Proyecto final compu 1
+#Ricardo Aguilar Hernandez , Ander Villalobos Gilling
+
+import tkinter
+#usamos esta libreria para la interfas grafica
+#traemos librerias matematicas
+#a peticion de isela ahora si va a integrar
+import math
+import numpy as np
+from sympy import *
+# escribimos from sympy import *  en lugar de import sympy
+#para que traiga todo y jale la funcion de abajo 
+from sympy.parsing.sympy_parser import parse_expr
+#esta ultima es para leer las funciones escritas en nuestra calcu
+
+
+#ahora aplicaremos las operaciones matematicas
+def derivada():
+    try:
+        x = symbols('x') #hacemos nuestra funcion para derivar y declaramos variable independiente
+        fun_escrita = funcion.get()
+        f = parse_expr(fun_escrita)
+        derivada = diff(f,x)
+        etiqueta.configure(text=derivada)
+    except:
+        etiqueta.configure(text="syntax error introduce funcion correctamente")
+        
+        
+def integral():
+    try:
+        x = symbols('x') #hacemos nuestra funcion para integrar y declaramos variable independiente
+        fun_escrita2 = funcion.get()
+        g = parse_expr(fun_escrita2)
+        integral = integrate(g,x)
+        etiqueta.configure(text=integral)
+    except:
+        etiqueta.configure(text="syntax error introduce funcion correctamente")
+
+
+#ahora sera el diseño de nuestra intrfas grafica con tkinter  tinker bell le llamaremos jsjsjs
+        
+ventana = tkinter.Tk()
+ventana.geometry('400x400')
+#ponemos lo que va a decir la calcu
+ventana.title("Calculadora derivadas e integrales: f(x)")
+
+anuncio = tkinter.Label(ventana, text="Introduce funcion de x:", font=("Arial", 15), fg="blue")
+anuncio.pack()
+
+funcion = tkinter.Entry(ventana, font=("Arial", 14))
+funcion.pack()
+
+etiqueta = tkinter.Label(ventana, text="Resultado", font=("Arial", 14), fg="red")
+etiqueta.pack()
+
+#declaramos las funciones que tienen los botones y los hacemos 
+boton1 = tkinter.Button(ventana, text="Derivar", font=("Arial", 14), command=derivada)
+boton1.pack()
+
+boton2 = tkinter.Button(ventana, text="Integrar", font=("Arial", 14), command=integral)
+boton2.pack()
+
+def _quit(): #funcion para salir 
+    ventana.quit()
+    #detener el mainloop
+    ventana.destroy()
+     #asi eliminamos la ventana de la calcu de la memoria
+                    
+
+button3 = tkinter.Button(master=ventana, text="Salir", font=("Arial", 15), command=_quit)
+button3.pack()
+
+
+ventana.mainloop()
+
+
+#notas para el uso    trig(x)    log(x)    X*n  es x por n    x**n es x elevada a la n 
