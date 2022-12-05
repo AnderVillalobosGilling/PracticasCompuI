@@ -1,5 +1,4 @@
 # Proyecto final compu 1
-#escrito en python3 con pip
 #Ricardo Aguilar Hernandez , Ander Villalobos Gilling
 
 import tkinter
@@ -13,6 +12,7 @@ from sympy import *
 #para que traiga todo y jale la funcion de abajo 
 from sympy.parsing.sympy_parser import parse_expr
 #esta ultima es para leer las funciones escritas en nuestra calcu
+from sympy.abc import x
 
 
 #ahora aplicaremos las operaciones matematicas
