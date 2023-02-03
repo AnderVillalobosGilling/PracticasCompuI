@@ -74,5 +74,4 @@ button3.pack()
 
 ventana.mainloop()
 
-
 #notas para el uso    trig(x)    log(x)    X*n  es x por n    x**n es x elevada a la n 
